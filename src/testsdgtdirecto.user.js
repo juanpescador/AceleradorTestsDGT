@@ -58,6 +58,23 @@ function keyUpListener(e) {
             // Flecha derecha, pasar a siguiente pregunta
             unsafeWindow.preguntaSiguiente();
             break;
+			
+		// Avanzado, seleccionar respuesta y pasar a siguiente pregunta.
+		// H
+		case 72:
+			unsafeWindow.responderPreguntaActiva(0);
+			unsafeWindow.preguntaSiguiente();
+			break;
+		// T
+		case 84:
+			unsafeWindow.responderPreguntaActiva(1);
+			unsafeWindow.preguntaSiguiente();
+			break;
+		// N
+		case 78:
+			unsafeWindow.responderPreguntaActiva(2);
+			unsafeWindow.preguntaSiguiente();
+			break;
         default:
             break;
     }
