@@ -77,6 +77,17 @@ function keyUpListener(e) {
 			break;
         default:
             break;
+		// Pregunta anterior/siguiente ergonómico para accesos directos avanzados.
+		// D
+		case 68:
+            // Flecha izquierda, pasar a anterior pregunta
+            unsafeWindow.preguntaAnterior();
+            break;
+		// S
+		case 83:
+            // Flecha derecha, pasar a siguiente pregunta
+            unsafeWindow.preguntaSiguiente();
+            break;
     }
 }
 document.addEventListener('keyup', keyUpListener, false);
