@@ -2,8 +2,8 @@
 // @name       Tests DGT Directo
 // @namespace  https://sedeapl.dgt.gob.es/
 // @version    0.1
-// @description  Accesos directos de teclado para los test de la DGT. Tecla A
-// marca respuesta A, tecla B respuesta B, tecla C respuesta C. Flecha derecha
+// @description  Accesos directos de teclado para los test de la DGT. Las
+// teclas A, B y C seleccionan las respectivas opciones. La Flecha derecha
 // pasa a la siguiente pregunta, flecha izquierda a la pregunta anterior.
 // Las teclas J, K y L seleccionan una respuesta y pasan a la siguiente
 // pregunta.
@@ -34,6 +34,16 @@
 //    with this program; if not, write to the Free Software Foundation, Inc.,
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
+/**
+  * Escoge la respuestaElegida (0, 1 ó 2) y pasa a la siguiente pregunta
+  * después de una pausa de 500ms. Esta pausa es para que el usuario pueda
+  * comprobar que se ha escogido la opción que deseaba.
+  */
+function escogerRespuestaYSeguir(respuestaElegida) {
+	unsafeWindow.responderPreguntaActiva(respuestaElegida);
+	setTimeout(function () {unsafeWindow.preguntaSiguiente();}, 500);
+}
+
 function keyUpListener(e) {
     switch (e.keyCode) {
 		// Selección respuestas.
@@ -59,34 +69,29 @@ function keyUpListener(e) {
             unsafeWindow.preguntaSiguiente();
             break;
 			
-		// Avanzado, seleccionar respuesta y pasar a siguiente pregunta.
-		// H
+		// 'Avanzado', seleccionar respuesta y pasar a siguiente pregunta.
+		// J / H (teclado Dvorak)
 		case 72:
-			unsafeWindow.responderPreguntaActiva(0);
-			unsafeWindow.preguntaSiguiente();
+			escogerRespuestaYSeguir(0);
 			break;
-		// T
+		// K / T (teclado Dvorak)
 		case 84:
-			unsafeWindow.responderPreguntaActiva(1);
-			unsafeWindow.preguntaSiguiente();
+			escogerRespuestaYSeguir(1);
 			break;
-		// N
+		// L / N (teclado Dvorak)
 		case 78:
-			unsafeWindow.responderPreguntaActiva(2);
-			unsafeWindow.preguntaSiguiente();
+			escogerRespuestaYSeguir(2);
 			break;
-        default:
-            break;
 		// Pregunta anterior/siguiente ergonómico para accesos directos avanzados.
-		// D
+		// H / D (teclado Dvorak)
 		case 68:
-            // Flecha izquierda, pasar a anterior pregunta
             unsafeWindow.preguntaAnterior();
             break;
-		// S
+		// Ñ / S (teclado Dvorak)
 		case 83:
-            // Flecha derecha, pasar a siguiente pregunta
             unsafeWindow.preguntaSiguiente();
+            break;
+        default:
             break;
     }
 }
