@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name       Tests DGT Directo
-// @namespace  https://sedeapl.dgt.gob.es/
+// @namespace  https://raw.githubusercontent.com/juanpescador/AceleradorTestsDGT
 // @version    0.1
 // @description  Accesos directos de teclado para los test de la DGT. Las
 // teclas A, B y C seleccionan las respectivas opciones. La Flecha derecha
@@ -10,6 +10,8 @@
 // El permiso unsafeWindow es necesario para poder llamar a las funciones
 // del JavaScript de la página de la DGT, necesario para seleccionar
 // respuestas y pasar de pregunta.
+// @downloadURL https://raw.githubusercontent.com/juanpescador/AceleradorTestsDGT/master/src/testsdgtdirecto.user.js
+// @updateURL https://raw.githubusercontent.com/juanpescador/AceleradorTestsDGT/master/src/testsdgtdirecto.user.js
 // @match      https://sedeapl.dgt.gob.es/WEB_EXAM_AUTO/examen/examen.jsp
 // @copyright  2014 John Fisher
 // @grant unsafeWindow
