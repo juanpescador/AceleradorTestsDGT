@@ -42,13 +42,13 @@
   * comprobar que se ha escogido la opción que deseaba.
   */
 function escogerRespuestaYSeguir(respuestaElegida) {
-	unsafeWindow.responderPreguntaActiva(respuestaElegida);
-	setTimeout(function () {unsafeWindow.preguntaSiguiente();}, 500);
+    unsafeWindow.responderPreguntaActiva(respuestaElegida);
+    setTimeout(function () {unsafeWindow.preguntaSiguiente();}, 500);
 }
 
 function keyUpListener(e) {
     switch (e.keyCode) {
-		// Selección respuestas.
+        // Selección respuestas.
         case 65:
             // Tecla A, seleccionar respuesta a)
             unsafeWindow.responderPreguntaActiva(0);
@@ -61,7 +61,7 @@ function keyUpListener(e) {
             // Tecla C, seleccionar respuesta c)
             unsafeWindow.responderPreguntaActiva(2);
             break;
-		// Flechas
+        // Flechas
         case 37:
             // Flecha izquierda, pasar a anterior pregunta
             unsafeWindow.preguntaAnterior();
@@ -70,35 +70,35 @@ function keyUpListener(e) {
             // Flecha derecha, pasar a siguiente pregunta
             unsafeWindow.preguntaSiguiente();
             break;
-			
-		// 'Avanzado', seleccionar respuesta y pasar a siguiente pregunta.
-		// H (teclado Dvorak)
-		case 72:
-		// J
-		case 74:
-			escogerRespuestaYSeguir(0);
-			break;
-		// T (teclado Dvorak)
-		case 84:
-		// K
-		case 75:
-			escogerRespuestaYSeguir(1);
-			break;
-		// N (teclado Dvorak)
-		case 78:
-		// L
-		case 76:
-			escogerRespuestaYSeguir(2);
-			break;
-		// Pregunta anterior/siguiente ergonómico para accesos directos avanzados.
-		// Solo aplica para disposición Dvorak ya que hay un conflicto con QWERTY,
-		// la H en Dvorak escoge la primera respuesta.
-		// D (teclado Dvorak)
-		case 68:
+            
+        // 'Avanzado', seleccionar respuesta y pasar a siguiente pregunta.
+        // H (teclado Dvorak)
+        case 72:
+        // J
+        case 74:
+            escogerRespuestaYSeguir(0);
+            break;
+        // T (teclado Dvorak)
+        case 84:
+        // K
+        case 75:
+            escogerRespuestaYSeguir(1);
+            break;
+        // N (teclado Dvorak)
+        case 78:
+        // L
+        case 76:
+            escogerRespuestaYSeguir(2);
+            break;
+        // Pregunta anterior/siguiente ergonómico para accesos directos avanzados.
+        // Solo aplica para disposición Dvorak ya que hay un conflicto con QWERTY,
+        // la H en Dvorak escoge la primera respuesta.
+        // D (teclado Dvorak)
+        case 68:
             unsafeWindow.preguntaAnterior();
             break;
-		// S (teclado Dvorak)
-		case 83:
+        // S (teclado Dvorak)
+        case 83:
             unsafeWindow.preguntaSiguiente();
             break;
         default:
