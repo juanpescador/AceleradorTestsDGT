@@ -72,24 +72,32 @@ function keyUpListener(e) {
             break;
 			
 		// 'Avanzado', seleccionar respuesta y pasar a siguiente pregunta.
-		// J / H (teclado Dvorak)
+		// H (teclado Dvorak)
 		case 72:
+		// J
+		case 74:
 			escogerRespuestaYSeguir(0);
 			break;
-		// K / T (teclado Dvorak)
+		// T (teclado Dvorak)
 		case 84:
+		// K
+		case 75:
 			escogerRespuestaYSeguir(1);
 			break;
-		// L / N (teclado Dvorak)
+		// N (teclado Dvorak)
 		case 78:
+		// L
+		case 76:
 			escogerRespuestaYSeguir(2);
 			break;
 		// Pregunta anterior/siguiente ergonómico para accesos directos avanzados.
-		// H / D (teclado Dvorak)
+		// Solo aplica para disposición Dvorak ya que hay un conflicto con QWERTY,
+		// la H en Dvorak escoge la primera respuesta.
+		// D (teclado Dvorak)
 		case 68:
             unsafeWindow.preguntaAnterior();
             break;
-		// Ñ / S (teclado Dvorak)
+		// S (teclado Dvorak)
 		case 83:
             unsafeWindow.preguntaSiguiente();
             break;
